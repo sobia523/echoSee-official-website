@@ -7,136 +7,141 @@ import { FiArrowRight, FiPlay } from "react-icons/fi";
 export default function HeroSection() {
   const fullText = "See What You Cannot Hear";
   const [text, setText] = useState("");
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     let index = 0;
-
     const interval = setInterval(() => {
-      setText(fullText.slice(0, index + 1));
       index++;
-
-      if (index === fullText.length) {
-        clearInterval(interval);
-      }
-    }, 90);
-
+      setText(fullText.slice(0, index));
+      if (index === fullText.length) { clearInterval(interval); setDone(true); }
+    }, 70);
     return () => clearInterval(interval);
   }, []);
 
+  const scrollTo = (id) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050816] pt-28 text-white md:pt-32">
-      {/* Animated Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-blue-500/10 animate-pulse"></div>
-
-      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
-
-      <div className="mx-auto grid min-h-[calc(100vh-100px)] max-w-7xl grid-cols-1 items-center gap-14 px-6 py-16 md:px-10 lg:grid-cols-2">
-        {/* Left Content */}
+    <section
+      id="home"
+      aria-label="Hero"
+      className="relative min-h-screen overflow-hidden bg-[#050816] pt-20"
+    >
+      <div className="wrap relative z-10 grid min-h-[calc(100vh-80px)] items-center gap-16 py-20 lg:grid-cols-2">
+        {/* Content */}
         <motion.div
-          initial={{ opacity: 0, x: -70 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
+          className="space-y-8"
         >
-          <p className="mb-4 inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300 backdrop-blur-md">
-            Future of Accessible Vision
-          </p>
-
-          <h1 className="min-h-[160px] text-4xl font-bold leading-tight md:text-6xl xl:text-7xl">
-            <span className="bg-gradient-to-r from-cyan-400 via-white to-purple-400 bg-clip-text text-transparent">
-              {text}
-            </span>
-            <span className="animate-pulse text-cyan-400">|</span>
-          </h1>
-
-          <p className="mt-6 max-w-xl text-lg leading-8 text-gray-300 md:text-xl">
-            EchoSee Smart Glasses transform speech into live subtitles on AR
-            lenses, helping the hearing-impaired community connect confidently
-            with the world around them.
-          </p>
-
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center justify-center gap-2 rounded-full bg-cyan-500 px-7 py-4 font-semibold text-black transition duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]"
-            >
-              Pre-Order Now
-              <FiArrowRight className="transition group-hover:translate-x-1" />
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 font-semibold text-white transition duration-300 hover:border-cyan-400 hover:bg-white/10"
-            >
-              <FiPlay />
-              Learn More
-            </motion.button>
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-cyan-400">
+            <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+            Empowering Accessibility
           </div>
 
-          {/* Stats */}
-          <div className="mt-12 grid grid-cols-3 gap-5 border-t border-white/10 pt-8">
-            <div>
-              <h3 className="text-2xl font-bold text-cyan-400">10h+</h3>
-              <p className="text-sm text-gray-400">Battery Life</p>
-            </div>
+          <h1 className="text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl">
+            See What You <br />
+            <span className="gradient-text">Cannot Hear</span>
+          </h1>
 
-            <div>
-              <h3 className="text-2xl font-bold text-cyan-400">20+</h3>
-              <p className="text-sm text-gray-400">Languages</p>
-            </div>
+          <p className="max-w-lg text-lg leading-relaxed text-gray-400">
+            EchoSee Smart Glasses transform speech into live subtitles on AR lenses — empowering the hearing-impaired community to connect confidently with the world.
+          </p>
 
+          <div className="flex flex-wrap gap-5 pt-6">
+            <button
+              onClick={() => scrollTo("preorder")}
+              className="btn-primary group"
+            >
+              <span>Pre-Order Now</span>
+              <FiArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            </button>
+            <button
+              onClick={() => scrollTo("how-it-works")}
+              className="btn-secondary group"
+            >
+              <FiPlay size={18} className="transition-transform group-hover:scale-110" />
+              <span>Learn More</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 border-t border-white/5 pt-10">
             <div>
-              <h3 className="text-2xl font-bold text-cyan-400">AI</h3>
-              <p className="text-sm text-gray-400">Offline Chip</p>
+              <p className="text-2xl font-bold text-white">10h+</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Battery</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">20+</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Languages</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">AI</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Processing</p>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Side */}
+        {/* Visual */}
         <motion.div
-          initial={{ opacity: 0, x: 70 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           className="relative flex justify-center"
         >
-          {/* Floating Main Card */}
-          <motion.div
-            animate={{ y: [0, -14, 0] }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="relative w-full max-w-lg rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl"
-          >
+          <div className="relative aspect-square w-full max-w-lg rounded-[3rem] bg-gradient-to-br from-cyan-500/10 to-purple-500/10 p-2 shadow-2xl backdrop-blur-3xl">
             <img
               src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80"
               alt="EchoSee Smart Glasses"
-              className="h-[420px] w-full rounded-3xl object-cover"
+              className="h-full w-full rounded-[2.5rem] object-cover"
             />
-
-            {/* Live Subtitle Box */}
+            {/* Float Card */}
             <motion.div
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-              className="absolute bottom-10 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl border border-cyan-400/20 bg-black/70 px-5 py-4 backdrop-blur-md"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-10 left-1/2 w-[85%] -translate-x-1/2 bg-black/60 backdrop-blur-xl rounded-2xl p-6 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
             >
-              <p className="text-sm text-cyan-300">Live Subtitle</p>
-              <p className="mt-1 text-white">Hello! Welcome to the future.</p>
+              <div className="mb-3 flex items-center gap-3">
+                <div className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-400">Live AR Transcription</span>
+              </div>
+              <p className="text-[15px] font-bold leading-relaxed text-white min-h-[3rem]">
+                {/* Typing Animation for Subtitle */}
+                <motion.span
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    hidden: { opacity: 1 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.03,
+                      },
+                    },
+                  }}
+                >
+                  {'"Welcome to the future. EchoSee turns every voice into visible text right before your eyes."'.split("").map((char, index) => (
+                    <motion.span
+                      key={index}
+                      variants={{
+                        hidden: { opacity: 0, display: "none" },
+                        visible: { opacity: 1, display: "inline" },
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.span>
+              </p>
             </motion.div>
-          </motion.div>
-
-          {/* Glow Rings */}
-          <div className="absolute -left-10 top-10 h-24 w-24 rounded-full border border-cyan-400/30"></div>
-          <div className="absolute -right-8 bottom-16 h-16 w-16 rounded-full border border-purple-400/30"></div>
+          </div>
         </motion.div>
       </div>
+
+      {/* Bg Deco */}
+      <div className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" aria-hidden="true" />
+      <div className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-purple-500/10 blur-[120px]" aria-hidden="true" />
     </section>
   );
 }
