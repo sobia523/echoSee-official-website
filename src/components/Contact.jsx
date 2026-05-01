@@ -35,6 +35,32 @@ export default function Contact() {
       aria-label="Contact us"
       className="relative bg-[#050816] section-py text-white"
     >
+      <style jsx global>{`
+        .input-field {
+          width: 100%;
+          background: rgba(10, 15, 30, 0.6);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 1.25rem;
+          padding: 1.25rem 1.5rem;
+          color: #fff;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          outline: none;
+          font-size: 0.95rem;
+        }
+        .input-field:focus {
+          border-color: #22d3ee;
+          background: rgba(10, 15, 30, 0.8);
+          box-shadow: 0 0 25px rgba(34, 211, 238, 0.15);
+        }
+        .input-field:-webkit-autofill,
+        .input-field:-webkit-autofill:hover,
+        .input-field:-webkit-autofill:focus {
+          -webkit-text-fill-color: #fff;
+          -webkit-box-shadow: 0 0 0px 1000px #0a0f1e inset;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+      `}</style>
       <div className="wrap">
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Info */}
@@ -124,25 +150,25 @@ export default function Contact() {
                     <div className="relative group">
                       <input
                         id="cn-name" type="text" placeholder=" " required
-                        className="peer input-field pt-6 pb-2"
+                        className="peer input-field pt-8 pb-3"
                       />
                       <label 
                         htmlFor="cn-name" 
-                        className="absolute left-5 top-4 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-wider peer-placeholder-shown:text-sm peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-4 peer-focus:text-xs peer-focus:text-cyan-400"
+                        className="absolute left-6 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
                       >
-                        Name
+                        Full Name
                       </label>
                     </div>
                     <div className="relative group">
                       <input
                         id="cn-email" type="email" placeholder=" " required
-                        className="peer input-field pt-6 pb-2"
+                        className="peer input-field pt-8 pb-3"
                       />
                       <label 
                         htmlFor="cn-email" 
-                        className="absolute left-5 top-4 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-wider peer-placeholder-shown:text-sm peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-4 peer-focus:text-xs peer-focus:text-cyan-400"
+                        className="absolute left-6 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
                       >
-                        Email
+                        Email Address
                       </label>
                     </div>
                   </div>
@@ -151,34 +177,34 @@ export default function Contact() {
                     <select
                       id="cn-subject" required
                       defaultValue=""
-                      className="peer input-field appearance-none pt-6 pb-2 pr-12"
+                      className="peer input-field appearance-none pt-8 pb-3 pr-12"
                     >
-                      <option value="" disabled className="bg-[#050816]"> </option>
-                      <option value="general" className="bg-[#050816]">General Inquiry</option>
-                      <option value="support" className="bg-[#050816]">Support</option>
-                      <option value="feedback" className="bg-[#050816]">Feedback</option>
+                      <option value="" disabled className="bg-[#0a0f1e]"></option>
+                      <option value="general" className="bg-[#0a0f1e]">General Inquiry</option>
+                      <option value="support" className="bg-[#0a0f1e]">Support</option>
+                      <option value="feedback" className="bg-[#0a0f1e]">Feedback</option>
                     </select>
                     <label 
                       htmlFor="cn-subject" 
-                      className="absolute left-5 top-4 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-wider peer-focus:text-cyan-400"
+                      className="absolute left-6 top-2.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400 transition-all pointer-events-none"
                     >
                       Subject
                     </label>
-                    <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-gray-500 mt-2">
-                      <FiArrowRight className="rotate-90" size={16} />
+                    <div className="pointer-events-none absolute right-6 top-1/2 -translate-y-px text-cyan-400/50 mt-1">
+                      <FiArrowRight className="rotate-90" size={14} />
                     </div>
                   </div>
 
                   <div className="relative">
                     <textarea
                       id="cn-message" rows="4" placeholder=" " required
-                      className="peer input-field pt-7 pb-3 resize-none"
+                      className="peer input-field pt-10 pb-4 resize-none"
                     />
                     <label 
                       htmlFor="cn-message" 
-                      className="absolute left-5 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-wider peer-placeholder-shown:text-sm peer-placeholder-shown:top-7 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-5 peer-focus:text-xs peer-focus:text-cyan-400"
+                      className="absolute left-6 top-6 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-8 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
                     >
-                      Message
+                      Message Details
                     </label>
                   </div>
 

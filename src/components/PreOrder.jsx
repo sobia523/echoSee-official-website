@@ -77,49 +77,60 @@ export default function PreOrder() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-7">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid gap-6 sm:grid-cols-2">
-                    <div className="space-y-2.5">
-                      <label htmlFor="po-fname" className="text-[13px] font-bold uppercase tracking-wider text-gray-500 ml-1">First Name</label>
+                    <div className="relative group">
                       <input
-                        id="po-fname" type="text" placeholder="John" required
-                        className="input-field"
+                        id="pre-name" type="text" placeholder=" " required
+                        className="peer input-field pt-8 pb-3"
                       />
-                    </div>
-                    <div className="space-y-2.5">
-                      <label htmlFor="po-lname" className="text-[13px] font-bold uppercase tracking-wider text-gray-500 ml-1">Last Name</label>
-                      <input
-                        id="po-lname" type="text" placeholder="Doe" required
-                        className="input-field"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2.5">
-                    <label htmlFor="po-email" className="text-[13px] font-bold uppercase tracking-wider text-gray-500 ml-1">Email Address</label>
-                    <input
-                      id="po-email" type="email" placeholder="john@example.com" required
-                      className="input-field"
-                    />
-                  </div>
-                  <div className="space-y-2.5">
-                    <label htmlFor="po-plan" className="text-[13px] font-bold uppercase tracking-wider text-gray-500 ml-1">Choose Plan</label>
-                    <div className="relative">
-                      <select
-                        id="po-plan" defaultValue="premium"
-                        className="input-field appearance-none pr-12"
+                      <label 
+                        htmlFor="pre-name" 
+                        className="absolute left-6 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
                       >
-                        <option value="standard" className="bg-[#050816]">Standard — PKR 35,000</option>
-                        <option value="premium" className="bg-[#050816]">Premium — PKR 45,000</option>
-                      </select>
-                      <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-gray-500">
-                        <FiArrowRight className="rotate-90" size={16} />
-                      </div>
+                        Full Name
+                      </label>
+                    </div>
+                    <div className="relative group">
+                      <input
+                        id="pre-email" type="email" placeholder=" " required
+                        className="peer input-field pt-8 pb-3"
+                      />
+                      <label 
+                        htmlFor="pre-email" 
+                        className="absolute left-6 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
+                      >
+                        Email Address
+                      </label>
                     </div>
                   </div>
-                  <button type="submit" className="btn-primary w-full group mt-2">
+                  
+                  <div className="relative">
+                    <select
+                      id="pre-plan" required
+                      defaultValue=""
+                      className="peer input-field appearance-none pt-8 pb-3 pr-12"
+                    >
+                      <option value="" disabled className="bg-[#0a0f1e]"></option>
+                      <option value="individual" className="bg-[#0a0f1e]">Individual Plan (PKR 35,000)</option>
+                      <option value="corporate" className="bg-[#0a0f1e]">Corporate Plan (PKR 40,000)</option>
+                      <option value="premium" className="bg-[#0a0f1e]">Premium Bundle (+ Updates)</option>
+                    </select>
+                    <label 
+                      htmlFor="pre-plan" 
+                      className="absolute left-6 top-2.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400 transition-all pointer-events-none"
+                    >
+                      Select Plan
+                    </label>
+                    <div className="pointer-events-none absolute right-6 top-1/2 -translate-y-px text-cyan-400/50 mt-1">
+                      <FiArrowRight className="rotate-90" size={14} />
+                    </div>
+                  </div>
+
+                  <button type="submit" className="btn-primary w-full group py-4">
                     <span className="flex items-center justify-center gap-3">
                       {status === "loading" ? "Processing..." : "Reserve My Spot"}
-                      {status === "loading" ? <FiLoader className="animate-spin" /> : <FiShoppingCart className="transition-transform group-hover:scale-110" />}
+                      <FiCheckCircle className={`transition-transform group-hover:scale-110 ${status === "loading" ? "animate-pulse" : ""}`} />
                     </span>
                   </button>
                 </form>
