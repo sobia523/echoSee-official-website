@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const timelineItems = [
-  { year: "2023", title: "The Problem Discovered",    description: "Our founder experienced firsthand how isolating the world feels when sound is inaccessible — a child of hearing-impaired parents." },
-  { year: "2024", title: "The Idea is Born",          description: "A team of engineers and accessibility advocates came together with one mission: bridge the gap between the hearing and hearing-impaired worlds." },
-  { year: "2025", title: "EchoSee Prototype",         description: "After 18 months of R&D, the first EchoSee prototype was built — displaying real-time AI subtitles on AR lenses with full offline processing." },
-  { year: "2026", title: "Going to Market",           description: "EchoSee launches in Pakistan and prepares for global rollout, partnering with schools, NGOs, and healthcare institutions." },
+  { year: "2023", title: "The Problem Discovered", description: "Our founder experienced firsthand how isolating the world feels when sound is inaccessible — a child of hearing-impaired parents." },
+  { year: "2024", title: "The Idea is Born", description: "A team of engineers and accessibility advocates came together with one mission: bridge the gap between the hearing and hearing-impaired worlds." },
+  { year: "2025", title: "EchoSee Prototype", description: "After 18 months of R&D, the first EchoSee prototype was built — displaying real-time AI subtitles on AR lenses with full offline processing." },
+  { year: "2026", title: "Going to Market", description: "EchoSee launches in Pakistan and prepares for global rollout, partnering with schools, NGOs, and healthcare institutions." },
 ];
 
 export default function AboutUs() {
@@ -41,10 +41,10 @@ export default function AboutUs() {
         </motion.div>
 
         {/* Mission & Vision */}
-        <div className="mb-16 sm:mb-24 grid gap-8 md:grid-cols-2">
+        <div className="mb-24 sm:mb-40 grid gap-16 md:grid-cols-2 md:gap-12 lg:gap-24">
           {[
             { emoji: "🎯", title: "Our Mission", text: "To make every conversation accessible — regardless of hearing ability — through AI-powered, wearable, real-time subtitle technology." },
-            { emoji: "🌟", title: "Our Vision",  text: "A world where the hearing-impaired community can participate fully and confidently in every social, professional, and educational environment." },
+            { emoji: "🌟", title: "Our Vision", text: "A world where the hearing-impaired community can participate fully and confidently in every social, professional, and educational environment." },
           ].map((card, i) => (
             <motion.div
               key={card.title}
@@ -53,36 +53,36 @@ export default function AboutUs() {
               transition={{ duration: 0.6, delay: i * 0.12 }}
               viewport={{ once: true }}
               whileHover={{ y: -6 }}
-              className="glass-card rounded-2xl p-6 transition-all duration-300 hover:border-cyan-400/30"
+              className="glass-card relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14 transition-all duration-300 hover:border-cyan-400/30"
             >
-              <div className="mb-4 text-3xl">{card.emoji}</div>
-              <h3 className="mb-2 text-lg font-semibold text-white">{card.title}</h3>
-              <p className="text-sm leading-relaxed text-gray-400">{card.text}</p>
+              <div className="mb-4 text-4xl">{card.emoji}</div>
+              <h3 className="mb-4 text-xl font-bold text-white">{card.title}</h3>
+              <p className="text-base leading-relaxed text-gray-400">{card.text}</p>
             </motion.div>
           ))}
         </div>
 
         {/* Problem vs Solution */}
-        <div className="mb-16 sm:mb-32 grid gap-10 lg:grid-cols-2">
+        <div className="mb-24 sm:mb-48 grid gap-16 lg:grid-cols-2 lg:gap-32">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-6"
+            className="glass-card rounded-[2.5rem] p-10 sm:p-14 border-red-500/10"
           >
-            <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-purple-400">The Problem</h3>
-            <p className="mb-5 text-lg font-bold text-white">Traditional Hearing Aids Fall Short</p>
-            <ul className="space-y-3">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-red-400">The Problem</h3>
+            <p className="mb-8 text-3xl font-bold text-white leading-tight">Traditional Hearing Aids Fall Short</p>
+            <ul className="space-y-5">
               {[
                 "Only amplify sound — useless in noisy environments",
                 "Cannot translate speech to another language",
                 "No visual feedback or emotional context",
                 "Expensive, stigmatized, and often uncomfortable",
               ].map((pt) => (
-                <li key={pt} className="flex items-start gap-3 text-sm text-gray-400">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-400" aria-hidden="true" />
-                  {pt}
+                <li key={pt} className="flex items-start gap-5 text-gray-400">
+                  <span className="mt-2.5 h-2 w-2 flex-shrink-0 rounded-full bg-red-400/40" aria-hidden="true" />
+                  <span className="text-base leading-relaxed">{pt}</span>
                 </li>
               ))}
             </ul>
@@ -93,20 +93,20 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-6 border-cyan-400/20"
+            className="glass-card rounded-[2.5rem] p-10 sm:p-14 border-cyan-400/20"
           >
-            <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-cyan-400">The Solution</h3>
-            <p className="mb-5 text-lg font-bold text-white">AI-Based Vision for Sound</p>
-            <ul className="space-y-3">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400">The Solution</h3>
+            <p className="mb-8 text-3xl font-bold text-white leading-tight">AI-Based Vision for Sound</p>
+            <ul className="space-y-5">
               {[
                 "Real-time subtitles directly on AR lenses",
                 "Works offline with on-device AI chip",
                 "Emoji-based emotion cues for full context",
                 "2+ language support including Urdu & Arabic",
               ].map((pt) => (
-                <li key={pt} className="flex items-start gap-3 text-sm text-gray-400">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
-                  {pt}
+                <li key={pt} className="flex items-start gap-5 text-gray-400">
+                  <span className="mt-2.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400/40" aria-hidden="true" />
+                  <span className="text-base leading-relaxed">{pt}</span>
                 </li>
               ))}
             </ul>
@@ -119,43 +119,39 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-10 text-center"
+          className="mb-20 text-center max-w-4xl mx-auto"
         >
           <span className="section-label">Our Journey</span>
-          <h3 className="section-heading">
+          <h3 className="section-heading text-4xl sm:text-5xl">
             The <span className="gradient-text">EchoSee Story</span>
           </h3>
         </motion.div>
 
-        <div className="relative mx-auto max-w-2xl">
-          {/* Vertical line */}
-          <div aria-hidden="true" className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-cyan-400/50 via-purple-400/30 to-transparent sm:left-1/2 sm:-translate-x-px" />
+        <div className="relative mx-auto max-w-2xl flex flex-col gap-20">
+          {/* Vertical line - fixed to left */}
+          <div aria-hidden="true" className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-cyan-400/50 via-purple-400/30 to-transparent" />
 
           {timelineItems.map((item, i) => (
             <motion.div
               key={item.year}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -36 : 36 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
               viewport={{ once: true }}
-              className={`relative mb-20 sm:mb-24 pl-12 sm:pl-0 ${
-                i % 2 === 0 ? "sm:pr-[calc(50%+24px)]" : "sm:pl-[calc(50%+24px)]"
-              }`}
+              className="relative pl-12"
             >
-              {/* Dot */}
+              {/* Dot - fixed to left */}
               <div
-                className={`absolute top-3 flex h-5 w-5 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#07111f] shadow-[0_0_10px_rgba(34,211,238,0.5)] left-[6px] sm:left-auto ${
-                  i % 2 === 0 ? "sm:right-[calc(50%-10px)]" : "sm:left-[calc(50%-10px)]"
-                }`}
+                className="absolute top-4 left-[2px] flex h-6 w-6 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#07111f] shadow-[0_0_15px_rgba(34,211,238,0.5)]"
                 aria-hidden="true"
               >
-                <span className="h-2 w-2 rounded-full bg-cyan-400" />
+                <span className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
               </div>
 
-              <div className="glass-card rounded-xl p-6 hover:border-cyan-400/25 transition-colors duration-300">
-                <span className="mb-1 block text-[10px] font-bold uppercase tracking-[3px] text-cyan-400">{item.year}</span>
-                <h4 className="mb-1 text-sm font-semibold text-white">{item.title}</h4>
-                <p className="text-xs leading-relaxed text-gray-400">{item.description}</p>
+              <div className="glass-card rounded-[2rem] p-10 sm:p-14 hover:border-cyan-400/30 transition-all duration-300">
+                <span className="mb-2 block text-xs font-bold uppercase tracking-[4px] text-cyan-400">{item.year}</span>
+                <h4 className="mb-3 text-xl font-bold text-white">{item.title}</h4>
+                <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
               </div>
             </motion.div>
           ))}

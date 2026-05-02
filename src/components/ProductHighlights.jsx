@@ -65,9 +65,9 @@ export default function ProductHighlights() {
               <motion.article
                 key={item.id}
                 variants={card}
-                className="glass-card group relative overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500"
+                className="glass-card group relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14 transition-all duration-500"
               >
-                <div className="mb-8 flex items-start justify-between">
+                <div className="mb-6 flex items-start justify-between">
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 text-2xl text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
                     <Icon size={24} />
                   </div>

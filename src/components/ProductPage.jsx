@@ -9,22 +9,22 @@ import {
 } from "react-icons/fi";
 
 const features = [
-  { icon: FiEye,    title: "Real-Time Transcription",  desc: "Sub-second speech-to-text powered by on-device AI. Every word captured, every nuance preserved." },
-  { icon: FiType,   title: "Adjustable Font Size",     desc: "Customize subtitle size from compact to large — perfect for any visual preference." },
-  { icon: FiSmile,  title: "Emoji Subtitles",          desc: "Smart emotion detection adds emoji cues to subtitles, conveying tone beyond words." },
-  { icon: FiGlobe,  title: "Multilingual Support",     desc: "Urdu + English + 2 premium languages. Switch seamlessly mid-conversation." },
-  { icon: FiWifi,   title: "Offline AI Processing",    desc: "No cloud, no internet required. Full functionality on the built-in AI processor." },
-  { icon: FiMic,    title: "Noise-Cancelling Mic",     desc: "Advanced directional mic filters background noise for crystal-clear speech capture." },
-  { icon: FiLayers, title: "Stylish Design",           desc: "Lightweight, modern frames that look just like regular glasses — no stigma, pure style." },
+  { icon: FiEye, title: "Real-Time Transcription", desc: "Sub-second speech-to-text powered by on-device AI. Every word captured, every nuance preserved." },
+  { icon: FiType, title: "Adjustable Font Size", desc: "Customize subtitle size from compact to large — perfect for any visual preference." },
+  { icon: FiSmile, title: "Emoji Subtitles", desc: "Smart emotion detection adds emoji cues to subtitles, conveying tone beyond words." },
+  { icon: FiGlobe, title: "Multilingual Support", desc: "Urdu + English + 2 premium languages. Switch seamlessly mid-conversation." },
+  { icon: FiWifi, title: "Offline AI Processing", desc: "No cloud, no internet required. Full functionality on the built-in AI processor." },
+  { icon: FiMic, title: "Noise-Cancelling Mic", desc: "Advanced directional mic filters background noise for crystal-clear speech capture." },
+  { icon: FiLayers, title: "Stylish Design", desc: "Lightweight, modern frames that look just like regular glasses — no stigma, pure style." },
 ];
 
 const specs = [
-  { icon: FiEye,            label: "Display",      value: "AR Micro-Projector Lens" },
-  { icon: FiCpu,            label: "Processor",    value: "Dedicated AI Edge Chip" },
-  { icon: FiMic,            label: "Audio",        value: "Noise-Cancelling Array Mic" },
-  { icon: FiBatteryCharging,label: "Battery",      value: "10–12 Hours Continuous Use" },
-  { icon: FiCamera,         label: "Camera",       value: "Optional 12MP Module" },
-  { icon: FiMaximize,       label: "Connectivity", value: "Bluetooth 5.3 + USB-C" },
+  { icon: FiEye, label: "Display", value: "AR Micro-Projector Lens" },
+  { icon: FiCpu, label: "Processor", value: "Dedicated AI Edge Chip" },
+  { icon: FiMic, label: "Audio", value: "Noise-Cancelling Array Mic" },
+  { icon: FiBatteryCharging, label: "Battery", value: "10–12 Hours Continuous Use" },
+  { icon: FiCamera, label: "Camera", value: "Optional 12MP Module" },
+  { icon: FiMaximize, label: "Connectivity", value: "Bluetooth 5.3 + USB-C" },
 ];
 
 const gallery = [
@@ -36,8 +36,8 @@ const gallery = [
 
 export default function ProductPage() {
   const [activeFeature, setActiveFeature] = useState(null);
-  const [videoOpen,     setVideoOpen]     = useState(false);
-  const [activeImg,     setActiveImg]     = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [activeImg, setActiveImg] = useState(0);
 
   const prevImg = () => setActiveImg((p) => (p - 1 + gallery.length) % gallery.length);
   const nextImg = () => setActiveImg((p) => (p + 1) % gallery.length);
@@ -86,13 +86,11 @@ export default function ProductPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 onClick={() => setActiveFeature(isActive ? null : i)}
-                className={`group relative overflow-hidden rounded-[2rem] p-8 text-left transition-all duration-500 ${
-                  isActive ? "bg-white/[0.05] border border-cyan-400/30" : "bg-white/[0.02] border border-white/5 hover:border-white/10"
-                }`}
+                className={`group relative rounded-[2rem] p-8 text-left transition-all duration-500 ${isActive ? "bg-white/[0.05] border border-cyan-400/30" : "bg-white/[0.02] border border-white/5 hover:border-white/10"
+                  }`}
               >
-                <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors ${
-                  isActive ? "bg-cyan-500 text-black" : "bg-white/5 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black"
-                }`}>
+                <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors ${isActive ? "bg-cyan-500 text-black" : "bg-white/5 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black"
+                  }`}>
                   <Icon size={20} />
                 </div>
                 <h3 className="mb-2 text-lg font-bold text-white">{f.title}</h3>
@@ -142,7 +140,7 @@ export default function ProductPage() {
                     className="absolute inset-0 rounded-[2rem] border border-cyan-400/40 pointer-events-none"
                     style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }} // Simulating line draw
                   />
-                  
+
                   <div className="glass-card flex items-center gap-6 rounded-[2rem] p-8 transition-all hover:bg-white/[0.05] relative z-10">
                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all">
                       <Icon size={24} />
@@ -175,15 +173,14 @@ export default function ProductPage() {
               <p className="text-gray-400 mb-8 leading-relaxed">
                 Experience the EchoSee interface. Switch languages below to see how our AI projects real-time transcription directly onto your field of view.
               </p>
-              
+
               <div className="flex flex-wrap gap-3">
                 {["English", "Urdu", "Arabic", "Chinese"].map((lang) => (
                   <button
                     key={lang}
                     onClick={() => setActiveFeature(lang)}
-                    className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
-                      activeFeature === lang ? "bg-cyan-500 text-black shadow-[0_0_15px_rgba(34,211,238,0.5)]" : "bg-white/5 text-gray-400 hover:bg-white/10"
-                    }`}
+                    className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activeFeature === lang ? "bg-cyan-500 text-black shadow-[0_0_15px_rgba(34,211,238,0.5)]" : "bg-white/5 text-gray-400 hover:bg-white/10"
+                      }`}
                   >
                     {lang}
                   </button>
@@ -193,10 +190,10 @@ export default function ProductPage() {
 
             <div className="relative min-h-[250px] aspect-video rounded-3xl bg-black/40 border border-white/5 overflow-hidden group shadow-2xl sm:min-h-0">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" />
-              
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
-                <div className="w-full max-w-[280px] sm:max-w-sm glass-card rounded-2xl p-5 sm:p-6 border-cyan-400/30">
-                  <div className="mb-3 flex items-center gap-2">
+
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                <div className="w-[90%] max-w-[320px] glass-card rounded-2xl p-6 border-cyan-400/30 flex flex-col items-center text-center shadow-2xl">
+                  <div className="mb-3 flex items-center justify-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400">
                       {activeFeature || "Live Subtitle"}
@@ -210,10 +207,10 @@ export default function ProductPage() {
                       exit={{ opacity: 0, y: -10 }}
                       className="text-base sm:text-lg font-bold text-white italic leading-tight text-center"
                     >
-                      {activeFeature === "Urdu" ? "خوش آمدید! ایکو سی آپ کی آواز کو متن میں بدل دیتا ہے۔" : 
-                       activeFeature === "Arabic" ? "أهلاً بك! إيكو سي يحول صوتك إلى نص." :
-                       activeFeature === "Chinese" ? "欢迎！EchoSee 将您的声音转换为文本。" :
-                       "\"Welcome! EchoSee transforms your voice into live visual text.\""}
+                      {activeFeature === "Urdu" ? "خوش آمدید! ایکو سی آپ کی آواز کو متن میں بدل دیتا ہے۔" :
+                        activeFeature === "Arabic" ? "أهلاً بك! إيكو سي يحول صوتك إلى نص." :
+                          activeFeature === "Chinese" ? "欢迎！EchoSee 将您的声音转换为文本。" :
+                            "\"Welcome! EchoSee transforms your voice into live visual text.\""}
                     </motion.p>
                   </AnimatePresence>
                 </div>
@@ -243,8 +240,8 @@ export default function ProductPage() {
             key={activeImg}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ 
-              rotateY: 15, 
+            whileHover={{
+              rotateY: 15,
               rotateX: -5,
               scale: 1.05,
               boxShadow: "0 50px 100px -20px rgba(0,0,0,0.5)"
@@ -278,9 +275,8 @@ export default function ProductPage() {
             <button
               key={img.alt}
               onClick={() => setActiveImg(i)}
-              className={`overflow-hidden rounded-xl transition-all duration-200 ${
-                activeImg === i ? "ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#050816]" : "opacity-60 hover:opacity-100"
-              }`}
+              className={`overflow-hidden rounded-xl transition-all duration-200 ${activeImg === i ? "ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#050816]" : "opacity-60 hover:opacity-100"
+                }`}
               aria-label={`View ${img.alt}`}
             >
               <img
