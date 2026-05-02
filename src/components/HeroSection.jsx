@@ -28,7 +28,7 @@ export default function HeroSection() {
       aria-label="Hero"
       className="relative min-h-screen overflow-hidden bg-[#050816] pt-28 sm:pt-20"
     >
-      <div className="wrap relative z-10 grid min-h-[calc(100vh-80px)] items-center gap-16 py-20 lg:grid-cols-2">
+      <div className="wrap relative z-10 grid min-h-[calc(100vh-80px)] items-center gap-16 py-20 lg:py-32 lg:grid-cols-2">
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

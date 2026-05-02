@@ -28,7 +28,7 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-10 sm:mb-16 max-w-2xl text-center"
+          className="mx-auto mb-12 sm:mb-24 max-w-2xl text-center"
         >
           <span className="section-label">FAQ</span>
           <h2 className="section-heading mb-4">

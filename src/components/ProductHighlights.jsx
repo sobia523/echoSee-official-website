@@ -39,7 +39,7 @@ export default function ProductHighlights() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-12 sm:mb-24 max-w-2xl text-center"
         >
           <span className="section-label">Product Highlights</span>
           <h2 className="section-heading mb-4">

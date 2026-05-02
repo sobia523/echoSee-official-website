@@ -60,7 +60,7 @@ export default function ProductPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mx-auto mb-8 sm:mb-12 max-w-2xl text-center"
+          className="mx-auto mb-16 sm:mb-24 max-w-2xl text-center"
         >
           <span className="section-label">Product</span>
           <h2 className="section-heading">
@@ -74,7 +74,7 @@ export default function ProductPage() {
         </motion.div>
 
         {/* ── Feature Cards (expandable) ── */}
-        <div className="mb-12 sm:mb-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-16 sm:mb-32 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, i) => {
             const Icon = f.icon;
             const isActive = activeFeature === i;
@@ -119,7 +119,7 @@ export default function ProductPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-12 sm:mb-24"
+          className="mb-16 sm:mb-32"
         >
           <div className="mb-12 text-center">
             <span className="section-label">Hardware Specs</span>
