@@ -62,7 +62,7 @@ export default function PreOrder() {
                   <motion.div
                     initial={{ scale: 0, rotate: -45 }}
                     animate={{ scale: [1, 1.2, 1], rotate: 0 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                     className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20 text-green-400"
                   >
                     <FiCheckCircle size={32} />
