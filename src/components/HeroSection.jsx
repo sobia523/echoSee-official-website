@@ -73,7 +73,7 @@ export default function HeroSection() {
               <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Battery</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-white">20+</p>
+              <p className="text-2xl font-bold text-white">2+</p>
               <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Languages</p>
             </div>
             <div>

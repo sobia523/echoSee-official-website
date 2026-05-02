@@ -44,7 +44,7 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-10 sm:mb-16 max-w-2xl text-center"
         >
           <span className="section-label">How It Works</span>
           <h2 className="section-heading mb-4">
@@ -118,7 +118,7 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mx-auto mt-14 max-w-2xl rounded-2xl border border-white/10 bg-white/3 p-6 text-center backdrop-blur-xl"
+          className="mx-auto mt-10 sm:mt-14 max-w-2xl rounded-2xl border border-white/10 bg-white/3 p-6 text-center backdrop-blur-xl"
         >
           <p className="mb-4 text-xs font-semibold uppercase tracking-[4px] text-cyan-400">
             Live Subtitle Preview

@@ -27,7 +27,7 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-8 sm:mb-16 max-w-2xl text-center"
         >
           <span className="section-label">About Us</span>
           <h2 className="section-heading mb-4">
@@ -41,7 +41,7 @@ export default function AboutUs() {
         </motion.div>
 
         {/* Mission & Vision */}
-        <div className="mb-16 grid gap-5 md:grid-cols-2">
+        <div className="mb-10 sm:mb-16 grid gap-5 md:grid-cols-2">
           {[
             { emoji: "🎯", title: "Our Mission", text: "To make every conversation accessible — regardless of hearing ability — through AI-powered, wearable, real-time subtitle technology." },
             { emoji: "🌟", title: "Our Vision",  text: "A world where the hearing-impaired community can participate fully and confidently in every social, professional, and educational environment." },
@@ -63,7 +63,7 @@ export default function AboutUs() {
         </div>
 
         {/* Problem vs Solution */}
-        <div className="mb-20 grid gap-8 lg:grid-cols-2">
+        <div className="mb-12 sm:mb-20 grid gap-8 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -102,7 +102,7 @@ export default function AboutUs() {
                 "Real-time subtitles directly on AR lenses",
                 "Works offline with on-device AI chip",
                 "Emoji-based emotion cues for full context",
-                "20+ language support including Urdu & Arabic",
+                "2+ language support including Urdu & Arabic",
               ].map((pt) => (
                 <li key={pt} className="flex items-start gap-3 text-sm text-gray-400">
                   <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />

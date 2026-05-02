@@ -7,7 +7,7 @@ import { FiChevronDown } from "react-icons/fi";
 const faqs = [
   { q: "How does EchoSee work without internet?",         a: "EchoSee is equipped with a dedicated Edge AI processor built directly into the frame. This chip handles all speech-to-text conversion locally in real-time, ensuring privacy and allowing you to use the glasses anywhere — even completely offline." },
   { q: "Can I wear them over my prescription glasses?",   a: "Currently EchoSee is designed as a standalone wearable. However, we offer custom prescription lenses fitted into the EchoSee frame so you only need to wear one pair." },
-  { q: "Which languages are supported?",                  a: "Out of the box, EchoSee supports English and Urdu. The Premium plan unlocks 20+ additional languages including Arabic, Spanish, Mandarin, French, and Hindi with live translation." },
+  { q: "Which languages are supported?",                  a: "Out of the box, EchoSee supports English and Urdu. The Premium plan unlocks 2+ additional languages including Arabic, Spanish, Mandarin, French, and Hindi with live translation." },
   { q: "How long does the battery last?",                 a: "With continuous use (mic active + subtitles displaying) the battery lasts 10–12 hours. The included charging case provides 2 additional full charges, giving you days of use." },
   { q: "Is there a monthly subscription fee?",            a: "No! The core functionality is completely free for life with hardware purchase. The optional Premium tier is a one-time upgrade for additional languages and future cloud features." },
   { q: "When will my pre-order ship?",                    a: "We are finalizing production. Pre-orders placed today are expected to begin shipping in Q4 2026. You will not be charged until your unit is ready to ship." },
@@ -28,7 +28,7 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-10 sm:mb-16 max-w-2xl text-center"
         >
           <span className="section-label">FAQ</span>
           <h2 className="section-heading mb-4">

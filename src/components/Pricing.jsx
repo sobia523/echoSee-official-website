@@ -26,7 +26,7 @@ const plans = [
     tagline: "Advanced features for professionals & travelers.",
     features: [
       "Everything in Standard",
-      "20+ Premium Languages",
+      "2+ Premium Languages",
       "Advanced Emotion Detection",
       "Cloud Sync (Coming Soon)",
       "Priority Software Updates",
@@ -72,7 +72,7 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-8 sm:mb-16 max-w-2xl text-center"
         >
           <span className="section-label">Pricing</span>
           <h2 className="section-heading mb-4">
@@ -100,7 +100,7 @@ export default function Pricing() {
         </div>
 
         {/* Plan Cards */}
-        <div className="mx-auto mb-24 grid max-w-5xl gap-8 md:grid-cols-2">
+        <div className="mx-auto mb-12 sm:mb-24 grid max-w-5xl gap-8 md:grid-cols-2">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}

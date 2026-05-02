@@ -12,7 +12,7 @@ const features = [
   { icon: FiEye,    title: "Real-Time Transcription",  desc: "Sub-second speech-to-text powered by on-device AI. Every word captured, every nuance preserved." },
   { icon: FiType,   title: "Adjustable Font Size",     desc: "Customize subtitle size from compact to large — perfect for any visual preference." },
   { icon: FiSmile,  title: "Emoji Subtitles",          desc: "Smart emotion detection adds emoji cues to subtitles, conveying tone beyond words." },
-  { icon: FiGlobe,  title: "Multilingual Support",     desc: "Urdu + English + 20 premium languages. Switch seamlessly mid-conversation." },
+  { icon: FiGlobe,  title: "Multilingual Support",     desc: "Urdu + English + 2 premium languages. Switch seamlessly mid-conversation." },
   { icon: FiWifi,   title: "Offline AI Processing",    desc: "No cloud, no internet required. Full functionality on the built-in AI processor." },
   { icon: FiMic,    title: "Noise-Cancelling Mic",     desc: "Advanced directional mic filters background noise for crystal-clear speech capture." },
   { icon: FiLayers, title: "Stylish Design",           desc: "Lightweight, modern frames that look just like regular glasses — no stigma, pure style." },
@@ -60,7 +60,7 @@ export default function ProductPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mx-auto mb-12 max-w-2xl text-center"
+          className="mx-auto mb-8 sm:mb-12 max-w-2xl text-center"
         >
           <span className="section-label">Product</span>
           <h2 className="section-heading">
@@ -74,7 +74,7 @@ export default function ProductPage() {
         </motion.div>
 
         {/* ── Feature Cards (expandable) ── */}
-        <div className="mb-24 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-12 sm:mb-24 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, i) => {
             const Icon = f.icon;
             const isActive = activeFeature === i;
@@ -119,7 +119,7 @@ export default function ProductPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-12 sm:mb-24"
         >
           <div className="mb-12 text-center">
             <span className="section-label">Hardware Specs</span>
@@ -164,7 +164,7 @@ export default function ProductPage() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-24 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-cyan-950/40 to-purple-950/40 border border-white/10 p-8 sm:p-12 lg:p-20"
+          className="mb-12 sm:mb-24 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-cyan-950/40 to-purple-950/40 border border-white/10 p-6 sm:p-12 lg:p-20"
         >
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
