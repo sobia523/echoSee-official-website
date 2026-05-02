@@ -138,7 +138,7 @@ export default function AboutUs() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
               viewport={{ once: true }}
-              className={`relative mb-8 pl-12 sm:pl-0 ${
+              className={`relative mb-10 sm:mb-12 pl-12 sm:pl-0 ${
                 i % 2 === 0 ? "sm:pr-[calc(50%+24px)]" : "sm:pl-[calc(50%+24px)]"
               }`}
             >
@@ -152,7 +152,7 @@ export default function AboutUs() {
                 <span className="h-2 w-2 rounded-full bg-cyan-400" />
               </div>
 
-              <div className="glass-card rounded-xl p-5 hover:border-cyan-400/25 transition-colors duration-300">
+              <div className="glass-card rounded-xl p-6 hover:border-cyan-400/25 transition-colors duration-300">
                 <span className="mb-1 block text-[10px] font-bold uppercase tracking-[3px] text-cyan-400">{item.year}</span>
                 <h4 className="mb-1 text-sm font-semibold text-white">{item.title}</h4>
                 <p className="text-xs leading-relaxed text-gray-400">{item.description}</p>

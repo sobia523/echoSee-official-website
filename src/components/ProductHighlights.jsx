@@ -9,7 +9,7 @@ const features = [
   { id: 1, icon: FiEye,           emoji: "👓", title: "AR Lens Subtitles",     description: "Live subtitles projected directly on AR lenses — see conversations in real time without looking away." },
   { id: 2, icon: FiCpu,           emoji: "🧠", title: "AI Offline Processing", description: "Built-in AI chip handles speech-to-text offline, so EchoSee works anywhere — no internet needed." },
   { id: 3, icon: FiMessageSquare, emoji: "📝", title: "Real-Time Transcription",description: "Instant, accurate speech-to-text with sub-second latency using on-device AI." },
-  { id: 4, icon: FiGlobe,         emoji: "🌍", title: "20+ Languages",          description: "Multilingual support including Urdu, English, Arabic, and 17+ premium world languages." },
+  { id: 4, icon: FiGlobe,         emoji: "🌍", title: "2+ Languages",          description: "Multilingual support including Urdu, English, Arabic, and other premium world languages." },
   { id: 5, icon: FiHeadphones,    emoji: "😊", title: "Emoji Emotion Cues",    description: "Smart tone detection displays emoji cues alongside subtitles for full conversational context." },
   { id: 6, icon: FiBatteryCharging,emoji:"🔋", title: "10–12h Battery Life",   description: "Full-day power for every conversation — from morning commutes to evening events." },
 ];

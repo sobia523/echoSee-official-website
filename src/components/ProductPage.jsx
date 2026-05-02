@@ -191,11 +191,11 @@ export default function ProductPage() {
               </div>
             </div>
 
-            <div className="relative aspect-video rounded-3xl bg-black/40 border border-white/5 overflow-hidden group shadow-2xl">
+            <div className="relative min-h-[250px] aspect-video rounded-3xl bg-black/40 border border-white/5 overflow-hidden group shadow-2xl sm:min-h-0">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" />
               
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="w-full max-w-sm glass-card rounded-2xl p-6 border-cyan-400/30">
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
+                <div className="w-full max-w-[280px] sm:max-w-sm glass-card rounded-2xl p-5 sm:p-6 border-cyan-400/30">
                   <div className="mb-3 flex items-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400">
@@ -208,7 +208,7 @@ export default function ProductPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="text-lg font-bold text-white italic leading-tight"
+                      className="text-base sm:text-lg font-bold text-white italic leading-tight"
                     >
                       {activeFeature === "Urdu" ? "خوش آمدید! ایکو سی آپ کی آواز کو متن میں بدل دیتا ہے۔" : 
                        activeFeature === "Arabic" ? "أهلاً بك! إيكو سي يحول صوتك إلى نص." :
