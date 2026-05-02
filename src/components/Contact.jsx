@@ -35,32 +35,7 @@ export default function Contact() {
       aria-label="Contact us"
       className="relative bg-[#050816] section-py text-white"
     >
-      <style jsx global>{`
-        .input-field {
-          width: 100%;
-          background: rgba(10, 15, 30, 0.6);
-          backdrop-filter: blur(8px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 1.25rem;
-          padding: 1.25rem 1.5rem;
-          color: #fff;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          outline: none;
-          font-size: 0.95rem;
-        }
-        .input-field:focus {
-          border-color: #22d3ee;
-          background: rgba(10, 15, 30, 0.8);
-          box-shadow: 0 0 25px rgba(34, 211, 238, 0.15);
-        }
-        .input-field:-webkit-autofill,
-        .input-field:-webkit-autofill:hover,
-        .input-field:-webkit-autofill:focus {
-          -webkit-text-fill-color: #fff;
-          -webkit-box-shadow: 0 0 0px 1000px #0a0f1e inset;
-          transition: background-color 5000s ease-in-out 0s;
-        }
-      `}</style>
+
       <div className="wrap">
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Info */}

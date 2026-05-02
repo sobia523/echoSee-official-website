@@ -58,7 +58,7 @@ export default function Navbar() {
     <header
       role="banner"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-nav py-4" : "bg-transparent py-6"
+        scrolled ? "glass-nav py-4" : "bg-[#050816]/60 backdrop-blur-lg py-6 lg:bg-transparent"
       }`}
     >
       <div className="wrap flex items-center justify-between">
@@ -69,12 +69,12 @@ export default function Navbar() {
           onClick={(e) => { handleScroll(e, "#home"); setMenuOpen(false); }}
           className="flex items-center gap-3 transition-transform hover:scale-105 group"
         >
-          <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 text-base font-bold text-black shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-shadow group-hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]">
-            ES
+          <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white/5 shadow-[0_0_20px_rgba(34,211,238,0.1)] transition-shadow group-hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] sm:h-11 sm:w-11">
+            <img src="/logo.png" alt="EchoSee Logo" className="h-7 w-7 object-contain sm:h-8 sm:w-8" />
           </div>
-          <div className="hidden sm:block leading-none">
-            <span className="block text-xl font-bold tracking-tight text-white">EchoSee</span>
-            <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-cyan-400">Digital AR</span>
+          <div className="leading-none">
+            <span className="block text-lg font-bold tracking-tight text-white sm:text-xl">EchoSee</span>
+            <span className="block text-[8px] font-bold uppercase tracking-[0.25em] text-cyan-400 sm:text-[10px]">Digital AR</span>
           </div>
         </a>
 

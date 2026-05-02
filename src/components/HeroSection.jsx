@@ -26,7 +26,7 @@ export default function HeroSection() {
     <section
       id="home"
       aria-label="Hero"
-      className="relative min-h-screen overflow-hidden bg-[#050816] pt-20"
+      className="relative min-h-screen overflow-hidden bg-[#050816] pt-28 sm:pt-20"
     >
       <div className="wrap relative z-10 grid min-h-[calc(100vh-80px)] items-center gap-16 py-20 lg:grid-cols-2">
         {/* Content */}
@@ -34,7 +34,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="space-y-8"
+          className="space-y-8 mt-16 lg:mt-0"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-cyan-400">
             <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -92,7 +92,7 @@ export default function HeroSection() {
         >
           <div className="relative aspect-square w-full max-w-lg rounded-[3rem] bg-gradient-to-br from-cyan-500/10 to-purple-500/10 p-2 shadow-2xl backdrop-blur-3xl">
             <img
-              src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80"
+              src="/hero.png"
               alt="EchoSee Smart Glasses"
               className="h-full w-full rounded-[2.5rem] object-cover"
             />

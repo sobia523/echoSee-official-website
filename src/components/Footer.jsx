@@ -67,8 +67,8 @@ export default function Footer() {
               onClick={(e) => scrollTo(e, "#home")}
               className="inline-flex items-center gap-4 transition-transform hover:scale-105"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 text-base font-bold text-black shadow-lg">
-                ES
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white/5 shadow-lg border border-white/5 sm:h-12 sm:w-12">
+                <img src="/logo.png" alt="EchoSee Logo" className="h-7 w-7 object-contain sm:h-9 sm:w-9" />
               </div>
               <div className="leading-none">
                 <span className="block text-xl font-bold text-white tracking-tight">EchoSee</span>

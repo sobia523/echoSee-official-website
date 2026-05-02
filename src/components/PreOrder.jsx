@@ -59,7 +59,7 @@ export default function PreOrder() {
             <div className="glass-card rounded-[2.5rem] p-8 sm:p-12">
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center">
-                  <motion.div 
+                  <motion.div
                     initial={{ scale: 0, rotate: -45 }}
                     animate={{ scale: [1, 1.2, 1], rotate: 0 }}
                     transition={{ type: "spring", stiffness: 200, damping: 10 }}
@@ -84,8 +84,8 @@ export default function PreOrder() {
                         id="pre-name" type="text" placeholder=" " required
                         className="peer input-field pt-8 pb-3"
                       />
-                      <label 
-                        htmlFor="pre-name" 
+                      <label
+                        htmlFor="pre-name"
                         className="absolute left-6 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
                       >
                         Full Name
@@ -96,15 +96,15 @@ export default function PreOrder() {
                         id="pre-email" type="email" placeholder=" " required
                         className="peer input-field pt-8 pb-3"
                       />
-                      <label 
-                        htmlFor="pre-email" 
+                      <label
+                        htmlFor="pre-email"
                         className="absolute left-6 top-5 text-gray-500 transition-all duration-300 pointer-events-none text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-[13px] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-[10px] peer-focus:text-cyan-400 peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:text-cyan-400"
                       >
                         Email Address
                       </label>
                     </div>
                   </div>
-                  
+
                   <div className="relative">
                     <select
                       id="pre-plan" required
@@ -116,8 +116,8 @@ export default function PreOrder() {
                       <option value="corporate" className="bg-[#0a0f1e]">Corporate Plan (PKR 40,000)</option>
                       <option value="premium" className="bg-[#0a0f1e]">Premium Bundle (+ Updates)</option>
                     </select>
-                    <label 
-                      htmlFor="pre-plan" 
+                    <label
+                      htmlFor="pre-plan"
                       className="absolute left-6 top-2.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400 transition-all pointer-events-none"
                     >
                       Select Plan
